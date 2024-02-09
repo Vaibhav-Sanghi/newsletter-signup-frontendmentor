@@ -1,0 +1,151 @@
+:root {
+  --ff: 'Roboto', sans-serif;
+
+  --tomato: hsl(4, 100%, 67%);
+  --dark-slate-grey: hsl(234, 29%, 20%);
+  --charcoal-grey: hsl(235, 18%, 26%);
+  --grey: hsl(231, 7%, 60%);
+  --white: hsl(0, 0%, 100%);
+}
+
+body {
+  font-family: var(--ff);
+  margin: 0;
+  height: 100vh;
+}
+
+.bg-img {
+  background: url('./images/illustration-sign-up-mobile.svg');
+  height: 45vh;
+  border-radius: 0 0 1rem 1rem;
+  background-size: cover;
+  background-position-y: 70%;
+}
+
+.content {
+  padding-inline: 1.5rem;
+  color: var(--charcoal-grey);
+}
+
+.content h1 {
+  font-weight: 700;
+  color: var(--dark-slate-grey);
+}
+
+.info {
+  padding-inline: 0.5rem;
+  font-weight: 420;
+}
+
+.content ul {
+  list-style: none;
+  font-weight: 420;
+}
+
+.content ul li {
+  margin-block: 0.75rem;
+  position: relative;
+}
+
+.content ul li::before {
+  content: url('./images/icon-list.svg');
+  position: absolute;
+  left: -2rem;
+}
+
+.sign-up {
+  margin-top: 2rem;
+}
+
+.sign-up label {
+  font-size: 0.9rem;
+  color: var(--dark-slate-grey);
+  font-weight: 700;
+  display: block;
+}
+
+.sign-up input {
+  box-sizing: border-box;
+  margin-block: 0.5rem;
+  width: 100%;
+  font-size: 1rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  outline: transparent;
+  border: 1px solid var(--grey);
+}
+
+.sign-up button,
+.success-card button {
+  background-color: var(--dark-slate-grey);
+  color: var(--white);
+  margin-top: 0.35rem;
+  width: 100%;
+  font-size: 1rem;
+  padding: 1rem;
+  font-weight: 550;
+  border-radius: 0.5rem;
+  border: none;
+  outline: none;
+  transition: background-color 150ms, box-shadow 100ms;
+}
+
+.sign-up button:focus-within,
+.sign-up button:hover,
+.success-card button:focus-within,
+.success-card button:hover {
+  background-color: var(--tomato);
+  box-shadow: 0 0 7px var(--tomato);
+}
+
+.success-card {
+  max-width: 30rem;
+  padding: 5rem 3rem;
+  color: var(--dark-slate-grey);
+}
+
+.success-card img {
+  width: min(5rem, 20vw);
+}
+
+.success-card button {
+  margin-top: 3rem;
+}
+
+@media (min-width: 600px) {
+  body {
+    background-color: var(--dark-slate-grey);
+    display: grid;
+    place-content: center;
+  }
+
+  .sign-up-card {
+    display: flex;
+    flex-direction: row-reverse;
+    background-color: white;
+    border-radius: 1.25rem;
+    padding: 2rem;
+  }
+
+  .content {
+    max-width: 25rem;
+  }
+
+  .bg-img {
+    min-width: 22vw;
+    height: 100%;
+    border-radius: 1.25rem;
+    background: url('./images/illustration-sign-up-desktop.svg');
+    background-position-y: 50%;
+  }
+
+  .success-card {
+    background-color: var(--white);
+    border-radius: 1.25rem;
+    padding-block: 2.75rem;
+  }
+}
+
+.success-card {
+  display: none;
+}
